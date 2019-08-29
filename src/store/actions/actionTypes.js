@@ -1,0 +1,10 @@
+export const ALL_PRODUCTS = 'ALL_PRODUCTS';
+export const DELETE_PRODUCT = 'DELETE_PRODUCT';
+export const ADD_PRODUCT = 'ADD_PRODUCT';
+export const GET_PRODUCT = 'GET_PRODUCT';
+export const UPDATE_PRODUCT = 'UPDATE_PRODUCT';
+export const FILTER_TABLE = 'FILTER_TABLE';
+export const SORT_PRODUCT = 'SORT_PRODUCT';
+
+export const GET_ID_PRODUCTS = 'GET_ID_PRODUCTS';
+

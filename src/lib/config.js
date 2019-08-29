@@ -1,0 +1,1 @@
+export const API_URL = 'https://5d410df275f67300146b3531.mockapi.io/api'
