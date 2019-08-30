@@ -24,7 +24,8 @@ export default class ProductTable extends Component {
   }
 
   render() {
-    var { items } = this.props;
+    var { items, onChangeA } = this.props;
+    console.log(onChangeA);
     var elmItem = items.map((item, index) => {
       return <ProductRow onChange={this.handleChange} key={index} index={index} item={item} />
     })

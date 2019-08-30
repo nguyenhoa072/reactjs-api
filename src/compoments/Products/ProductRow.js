@@ -4,59 +4,30 @@ import { connect } from 'react-redux';
 import { delete_product_request, get_id_products } from './../../store/actions/products';
 import to_slug from '../../lib'
 
-class ProductRow extends Component {
+const comment = {
+  date: new Date(),
+  text: 'I hope you enjoy learning React!',
+  author: {
+    name: 'Hello Kitty',
+    avatarUrl: 'https://placekitten.com/g/64/64',
+  },
+};
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     ids: []
-  //   }
-  // }
+class ProductRow extends Component {
 
   on_delete = (id) => {
     if (confirm('Bạn có muốn xóa?')) { //eslint-disable-line
       this.props.on_delete_product(id)
     }
+  }  
+
+  Comment = (props) => {
+    console.log(this.props.text);
   }
-
-  // handleChange = (e) => {
-  //   //Reference the Table.
-  //   var a_table = document.getElementById("table_body_1");
-
-  //   //Reference all the CheckBoxes in Table.
-  //   var checkBox = a_table.getElementsByTagName("input");
-
-  //   const id = e.target.id;
-  //   const ids = this.state.ids;
-  //   let index
-  //   console.log(checkBox)
-  //   for (var i = 0; i < checkBox.length; i++) {
-  //     console.log(e.target)
-  //     if (e.target.checked) {
-  //       console.log(checkBox[i])
-  //       // add the numerical value of the checkbox to options array
-  //       // console.log('if')
-  //       // console.log("ID lay dc la: ", id)
-  //       ids.push(checkBox[i].id)
-  //       // console.log("In ra sanh sach id sau khi lay: ",ids)
-  //     } else {
-  //       // console.log('else')
-  //       // or remove the value from the unchecked checkbox from the array
-  //       index = ids.indexOf(checkBox[i].id)
-  //       ids.splice(index, 1)
-  //     }
-  //   }
-
-  //   this.props.on_get_id_products(ids);
-
-  //   this.setState({
-  //     ids: ids
-  //   })
-  // };
 
   render() {
     var { item } = this.props;
-    // console.log(productGetIDs)
+
     return (
       <tr>
         <td>
@@ -66,7 +37,9 @@ class ProductRow extends Component {
           </div>
         </td>
         <td><Link to={'product/' + to_slug(item.name) + '.' + item.id + '.html'}> {item.name} </Link></td>
-        <td>{item.price}</td>
+        <td>{item.price}
+        {this.Comment()}
+        </td>
         <td>
           <span className={item.status === true ? 'badge badge-success' : 'badge badge-secondary'}>
             {item.status === true ? 'ON' : 'OFF'}

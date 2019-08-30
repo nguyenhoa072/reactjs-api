@@ -48,6 +48,13 @@ export const get_product = (item) => {
   }
 }
 
+// export const get_id_products = (id) => {
+//   return { 
+//     type: ActionTypes.GET_ID_PRODUCTS,
+//     id
+//   }
+// }
+
 export const get_product_request = (id) => {
   return dispatch => apiData(`products/${id}`, 'get', null).then(response => {
     dispatch(get_product(response.data));
@@ -78,12 +85,5 @@ export const sort_product = (sort) => {
   return { 
     type: ActionTypes.SORT_PRODUCT,
     sort
-  }
-}
-
-export const get_id_products = (id) => {
-  return { 
-    type: ActionTypes.GET_ID_PRODUCTS,
-    id
   }
 }
