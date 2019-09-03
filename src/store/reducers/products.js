@@ -25,10 +25,7 @@ export default (state = initialState, action) => {
 
     case actionTypes.DELETE_PRODUCT:
       id = action.id;
-      console.log("so id la:", id);
-      console.log("chieu dai:", id.length)
       if (Array.isArray(id) && Array.isArray(id) !== null) {
-        console.log(id.length)
         for (var i = 0; i < id.length; i++) {
           index = findIndex(state, id[i]);
           state.splice(index, id.length);
@@ -36,8 +33,6 @@ export default (state = initialState, action) => {
       } else {        
         index = findIndex(state, id);
         state.splice(index, 1);
-        console.log("it hon 2");
-        console.log(state)
       }
       return [...state]
 

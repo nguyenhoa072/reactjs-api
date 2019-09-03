@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, HashRouter  } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,10 +11,10 @@ window.$ = $;
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <MenuTop/>
       <RouterURL></RouterURL>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

@@ -4,12 +4,12 @@ import ProductRow from './ProductRow';
 export default class ProductTable extends Component {
 
   componentDidUpdate() {
-    var checkboxes = document.querySelectorAll('input.aaa'),
+    var checkboxes = document.querySelectorAll('input.checkbox'),
       checkall = document.getElementById('checkall');
 
     for (var i = 0; i < checkboxes.length; i++) {
       checkboxes[i].onclick = function () {
-        var checkedCount = document.querySelectorAll('input.aaa:checked').length;
+        var checkedCount = document.querySelectorAll('input.checkbox:checked').length;
 
         checkall.checked = checkedCount > 0;
         checkall.indeterminate = checkedCount > 0 && checkedCount < checkboxes.length;
@@ -24,8 +24,7 @@ export default class ProductTable extends Component {
   }
 
   render() {
-    var { items, onChangeA } = this.props;
-    console.log(onChangeA);
+    var { items } = this.props;
     var elmItem = items.map((item, index) => {
       return <ProductRow onChange={this.handleChange} key={index} index={index} item={item} />
     })

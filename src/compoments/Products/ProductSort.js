@@ -12,7 +12,6 @@ class ProductSort extends Component {
 
   render() {
     var { productSort } = this.props;
-    console.log(productSort)
     return (
       <div className="col-auto">
         <div className="dropdown">
