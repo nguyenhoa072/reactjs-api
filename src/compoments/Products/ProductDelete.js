@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { delete_product_request } from './../../store/actions/products';
+import { delete_product_request } from '../../store/actions/products';
 class ProductDelete extends Component {
 
   on_delete = (e) => {
@@ -24,6 +24,10 @@ class ProductDelete extends Component {
   }
 
   render() {
+    if(this.props.id)
+      console.log("object")
+    else 
+      console.log("id")  
     return (
       <div className="col-auto mr-auto">
         <button onChange={this.props.onChange} onClick={this.on_delete} type="button" className="btn btn-danger"><i className="fa fa-trash-o fa-fw"></i> Xóa</button>
