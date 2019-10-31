@@ -12,7 +12,7 @@ export default class MenuTop extends Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <MenuC label="Home" activeOn={true} to="/" />
-              <MenuC label="Upload Image" to="/upload-image" />
+              {/* <MenuC label="Upload Image" to="/upload-image" /> */}
               <MenuC label="Products" to="/products" />
             </ul>
             <form className="form-inline my-2 my-lg-0">

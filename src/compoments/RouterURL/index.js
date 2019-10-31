@@ -5,7 +5,7 @@ import Error404 from '../Pages/404';
 import ProductList from '../Products/ProductList';
 import addProduct from '../Products/ProductForm';
 import ProductView from '../Products/ProductView';
-import Images from '../Images/Images';
+// import Images from '../Images/Images';
 
 class RouterURL extends Component {
     render() {
@@ -13,7 +13,7 @@ class RouterURL extends Component {
             <div className="container py-5">
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route path="/upload-image" component={Images} />
+                    {/* <Route path="/upload-image" component={Images} /> */}
                     <Route path="/products" component={ProductList} />
                     <Route path="/product/add" component={addProduct} />
                     <Route path="/product/:id/edit" component={addProduct} />

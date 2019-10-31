@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux';
-import { delete_product_request } from '../../store/actions/products';
-class ProductDelete extends Component {
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { delete_product_request } from "../../store/actions/products";
 
-  on_delete = (e) => {
+import {ContextConsumer} from "./Context";
+
+class ProductDelete extends Component {
+  on_delete = e => {
     var id = [];
 
     //Reference the Table.
@@ -20,29 +22,53 @@ class ProductDelete extends Component {
     }
 
     this.props.on_delete_product(id);
-
-  }
+  };
 
   render() {
     return (
-      <div className="col-auto mr-auto">
-        <button onChange={this.props.onChange} onClick={this.on_delete} type="button" className="btn btn-danger"><i className="fa fa-trash-o fa-fw"></i> Xóa</button>
-      </div>
-    )
+      <ContextConsumer>
+        {context => (
+          <div className="col-auto mr-auto">
+            {(context.number >= 2) ? (
+              <button
+                onChange={this.props.onChange}
+                onClick={this.on_delete}
+                type="button"
+                className="btn btn-danger"
+              >
+                <i className="fa fa-trash-o fa-fw"></i> Xóa
+              </button>
+            ) : (
+              <button
+                disabled
+                onChange={this.props.onChange}
+                onClick={this.on_delete}
+                type="button"
+                className="btn btn-danger"
+              >
+                <i className="fa fa-trash-o fa-fw"></i> Xóa
+              </button>
+            )}
+          </div>
+        )}
+      </ContextConsumer>
+    );
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
-  return {
-  }
-}
+  return {};
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    on_delete_product: (id) => {
-      dispatch(delete_product_request(id))
+    on_delete_product: id => {
+      dispatch(delete_product_request(id));
     }
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductDelete)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ProductDelete);

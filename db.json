@@ -1,16 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "sam",
-      "location": "wales"
-    },
-    {
-      "id": 2,
-      "name": "sam",
-      "location": "wales"
-    },
-    {
       "name": "nobita nguyen",
       "location": "vietnam",
       "id": 3
