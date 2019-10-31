@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {ContextConsumer} from "./Context";
+import {ContextConsumer} from "../Context";
 import ProductRow from "./ProductRow";
 
 export default class ProductTable extends Component {

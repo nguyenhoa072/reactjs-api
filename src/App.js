@@ -3,7 +3,8 @@ import { BrowserRouter } from "react-router-dom";
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import RouterURL from './compoments/RouterURL';
+import './App.css';
+import RouterURL from './compoments/Router';
 import MenuTop from './compoments/Navbar/MenuTop';
 
 window.jQuery = $;

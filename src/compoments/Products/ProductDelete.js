@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { delete_product_request } from "../../store/actions/products";
 
-import {ContextConsumer} from "./Context";
+import {ContextConsumer} from "../Context";
 
 class ProductDelete extends Component {
   on_delete = e => {

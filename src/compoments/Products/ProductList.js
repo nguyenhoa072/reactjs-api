@@ -7,7 +7,7 @@ import ProductTable from "./ProductTable";
 import ProductAdd from "./ProductAdd";
 import ProductDelete from "./ProductDelete";
 
-import {ContextProvider} from "./Context";
+import {ContextProvider} from "../Context";
 
 class ProductList extends Component {
   state = {
@@ -59,9 +59,7 @@ class ProductList extends Component {
 
     return (
       <Fragment>
-        <ContextProvider 
-          value={this.state}          
-        >
+        <ContextProvider value={this.state}>
           <div className="row pb-3">
             <ProductAdd />
             <ProductDelete />

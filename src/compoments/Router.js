@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom";
-import Home from '../Home/Home'
-import Error404 from '../Pages/404';
-import ProductList from '../Products/ProductList';
-import addProduct from '../Products/ProductForm';
-import ProductView from '../Products/ProductView';
+import Home from '../compoments/Home/Home'
+import Error404 from '../compoments/Pages/404';
+import ProductList from '../compoments/Products/ProductList';
+import addProduct from '../compoments/Products/ProductForm';
+import ProductView from '../compoments/Products/ProductView';
 // import Images from '../Images/Images';
 
 class RouterURL extends Component {

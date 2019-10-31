@@ -16,7 +16,7 @@ class ProductSort extends Component {
       <div className="col-auto">
         <div className="dropdown">
           <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">Sắp xếp</button>
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
             <span onClick={() => this.onClick('name', 1)} className={(productSort.by === 'name' && productSort.value === 1) ? "dropdown-item active" : "dropdown-item"} >A -&gt; Z</span>
             <span onClick={() => this.onClick('name', -1)}  className={(productSort.by === 'name' && productSort.value === -1) ? "dropdown-item active" : "dropdown-item"}>Z -&gt; A</span>
             <span onClick={() => this.onClick('status', 1)} className={(productSort.by === 'status' && productSort.value === 1) ? "dropdown-item active" : "dropdown-item"}>On</span>

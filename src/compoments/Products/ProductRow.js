@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import { delete_product_request } from './../../store/actions/products';
 import to_slug from '../../lib'
-import {ContextConsumer} from "./Context";
+import {ContextConsumer} from "../Context";
 
 class ProductRow extends Component {
 
