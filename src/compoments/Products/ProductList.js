@@ -10,15 +10,38 @@ import ProductDelete from "./ProductDelete";
 import {ContextProvider} from "../Context";
 
 class ProductList extends Component {
+  
   state = {
-    status: false,
     number: 0,
+    
+    checkboxAll: (e) => {     
 
-    updateChecked: status => {
+      var checkboxes = document.querySelectorAll("input.checkbox")
+     
+      for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = e.target.checked;        
+      }
+      
+      var checkedCount = document.querySelectorAll("input.checkbox:checked").length
+
       this.setState({ 
-        status: status,
-        number: status === true ? this.state.number + 1 : this.state.number - 1
-      });
+        number: checkedCount
+      })    
+      
+    },
+
+    updateChecked: (status) => {    
+
+      var checkboxes = document.querySelectorAll("input.checkbox"),
+      checkall = document.getElementById("checkall");
+      var checkedCount = document.querySelectorAll("input.checkbox:checked").length;   
+
+      checkall.checked = checkedCount > 0;
+      checkall.indeterminate = checkedCount > 0 && checkedCount < checkboxes.length;
+ 
+      this.setState({ 
+        number: status === true ? this.state.number + 1 : this.state.number - 1        
+      })      
     }
   };
 

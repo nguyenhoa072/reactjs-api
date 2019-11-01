@@ -3,27 +3,6 @@ import {ContextConsumer} from "../Context";
 import ProductRow from "./ProductRow";
 
 export default class ProductTable extends Component {
-  componentDidUpdate() {
-    var checkboxes = document.querySelectorAll("input.checkbox"),
-      checkall = document.getElementById("checkall");
-
-    for (var i = 0; i < checkboxes.length; i++) {
-      checkboxes[i].onclick = function() {
-        var checkedCount = document.querySelectorAll("input.checkbox:checked")
-          .length;
-
-        checkall.checked = checkedCount > 0;
-        checkall.indeterminate =
-          checkedCount > 0 && checkedCount < checkboxes.length;
-      };
-    }
-
-    checkall.onclick = function() {
-      for (var i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].checked = this.checked;
-      }
-    };
-  }
 
   render() {
     var { items } = this.props;
@@ -50,9 +29,8 @@ export default class ProductTable extends Component {
                   <tr>
                     <th width="1%">
                       <div className="custom-control custom-checkbox">
-                        <input
-                          disabled
-                          type="checkbox"
+                        <input type="checkbox"
+                          onClick={e => context.checkboxAll(e)} 
                           className="custom-control-input"
                           id="checkall"
                         />

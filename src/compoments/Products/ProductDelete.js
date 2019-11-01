@@ -29,21 +29,17 @@ class ProductDelete extends Component {
       <ContextConsumer>
         {context => (
           <div className="col-auto mr-auto">
-            {(context.number >= 2) ? (
-              <button
-                onChange={this.props.onChange}
-                onClick={this.on_delete}
-                type="button"
+            { console.log(context.number) }
+            {context.number > 1 ? (
+              <button type="button"
+                onClick={this.on_delete}                
                 className="btn btn-danger"
               >
                 <i className="fa fa-trash-o fa-fw"></i> Xóa
               </button>
             ) : (
-              <button
-                disabled
-                onChange={this.props.onChange}
-                onClick={this.on_delete}
-                type="button"
+              <button type="button"
+                disabled              
                 className="btn btn-danger"
               >
                 <i className="fa fa-trash-o fa-fw"></i> Xóa
