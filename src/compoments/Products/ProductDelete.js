@@ -29,7 +29,6 @@ class ProductDelete extends Component {
       <ContextConsumer>
         {context => (
           <div className="col-auto mr-auto">
-            { console.log(context.number) }
             {context.number > 1 ? (
               <button type="button"
                 onClick={this.on_delete}                
