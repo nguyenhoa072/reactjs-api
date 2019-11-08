@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import $ from 'jquery';
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import RouterURL from './compoments/Router';
-import MenuTop from './compoments/Navbar/MenuTop';
+import $ from "jquery";
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import Router from "./compoments/Router";
+import Navigation from "./compoments/Navigation";
 
 window.jQuery = $;
 window.$ = $;
@@ -13,8 +13,8 @@ window.$ = $;
 function App() {
   return (
     <BrowserRouter>
-      <MenuTop/>
-      <RouterURL></RouterURL>
+      <Navigation />
+      <Router />
     </BrowserRouter>
   );
 }
