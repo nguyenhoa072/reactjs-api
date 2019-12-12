@@ -41,10 +41,10 @@ export const add_product_request = (item) => {
   })
 }
 
-export const get_product = (item) => {
+export const get_product = (id) => {
   return {
     type: ActionTypes.GET_PRODUCT,
-    item
+    id
   }
 }
 

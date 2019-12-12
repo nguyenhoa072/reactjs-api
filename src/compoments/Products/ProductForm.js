@@ -14,7 +14,7 @@ class ProductForm extends Component {
     super(props);
     this.state = {
       id: "",
-      name: "",
+      title: "",
       price: "",
       content: "",
       status: false
@@ -31,12 +31,12 @@ class ProductForm extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps && nextProps.productGet) {
       var { productGet } = nextProps;
       this.setState({
         id: productGet.id,
-        name: productGet.name,
+        title: productGet.title,
         price: productGet.price,
         content: productGet.content,
         status: productGet.status
@@ -61,11 +61,11 @@ class ProductForm extends Component {
 
   on_save = event => {
     event.preventDefault();
-    var { id, name, price, status, content } = this.state;
+    var { id, title, price, status, content } = this.state;
     var { history } = this.props;
     var item = {
       id: id,
-      name: name,
+      title: title,
       price: price,
       content: content,
       status: status
@@ -74,12 +74,13 @@ class ProductForm extends Component {
       this.props.on_update_product(item);
     } else {
       this.props.on_add_product(item);
+      console.log(item)
     }
     history.goBack();
   };
 
   render() {
-    var { name, price, status, content } = this.state;
+    var { title, price, status, content } = this.state;
 
     return (
       <Fragment>
@@ -95,9 +96,9 @@ class ProductForm extends Component {
                   <input
                     onChange={this.input_change}
                     type="text"
-                    value={name}
+                    value={title}
                     className="form-control"
-                    name="name"
+                    name="title"
                     placeholder=""
                     required
                   />

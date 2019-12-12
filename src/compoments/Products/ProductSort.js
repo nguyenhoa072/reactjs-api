@@ -17,8 +17,8 @@ class ProductSort extends Component {
         <div className="dropdown">
           <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">Sắp xếp</button>
           <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-            <span onClick={() => this.onClick('name', 1)} className={(productSort.by === 'name' && productSort.value === 1) ? "dropdown-item active" : "dropdown-item"} >A -&gt; Z</span>
-            <span onClick={() => this.onClick('name', -1)}  className={(productSort.by === 'name' && productSort.value === -1) ? "dropdown-item active" : "dropdown-item"}>Z -&gt; A</span>
+            <span onClick={() => this.onClick('title', 1)} className={(productSort.by === 'title' && productSort.value === 1) ? "dropdown-item active" : "dropdown-item"} >A -&gt; Z</span>
+            <span onClick={() => this.onClick('title', -1)}  className={(productSort.by === 'title' && productSort.value === -1) ? "dropdown-item active" : "dropdown-item"}>Z -&gt; A</span>
             <span onClick={() => this.onClick('status', 1)} className={(productSort.by === 'status' && productSort.value === 1) ? "dropdown-item active" : "dropdown-item"}>On</span>
             <span onClick={() => this.onClick('status', -1)} className={(productSort.by === 'status' && productSort.value === -1) ? "dropdown-item active" : "dropdown-item"}>Off</span>
             <span onClick={() => this.onClick('price', 1)} className={(productSort.by === 'price' && productSort.value === 1) ? "dropdown-item active" : "dropdown-item"}>Giá tăng dần</span>

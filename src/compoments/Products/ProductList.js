@@ -54,15 +54,15 @@ class ProductList extends Component {
 
     if (productFilter) {
       products = products.filter(item => {
-        return item.name.toLowerCase().indexOf(productFilter.trim()) !== -1;
+        return item.title.toLowerCase().indexOf(productFilter.trim()) !== -1;
       });
     }
 
-    if (productSort.by === "name") {
+    if (productSort.by === "title") {
       products.sort((a, b) => {
-        if (a.name.toLowerCase() > b.name.toLowerCase())
+        if (a.title.toLowerCase() > b.title.toLowerCase())
           return productSort.value;
-        else if (a.name.toLowerCase() < b.name.toLowerCase())
+        else if (a.title.toLowerCase() < b.title.toLowerCase())
           return -productSort.value;
         else return 0;
       });

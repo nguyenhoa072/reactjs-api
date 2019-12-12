@@ -5,7 +5,7 @@ import * as ROUTES from "../../constants/routes";
 const Navigation = () => (
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
     <div className="container">
-      <span class="navbar-brand">React</span>
+      <span className="navbar-brand">React</span>
       <button
         className="navbar-toggler"
         type="button"

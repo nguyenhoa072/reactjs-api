@@ -6,7 +6,7 @@ export default (state = initialState, action) => {
   switch (action.type) {
 
     case actionTypes.GET_PRODUCT:
-      return action.item
+      return action.id
 
     default:
       return state

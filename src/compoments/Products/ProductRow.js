@@ -25,7 +25,7 @@ class ProductRow extends Component {
                 <label className="custom-control-label" htmlFor={item.id}></label>
               </div>
             </td>
-            <td><Link to={'product/' + to_slug(item.name) + '.' + item.id + '.html'}> {item.name} </Link></td>
+            <td><Link to={'product/' + to_slug(item.title) + '.' + item.id + '.html'}> {item.title} </Link></td>
             <td>{item.price}
             </td>
             <td>

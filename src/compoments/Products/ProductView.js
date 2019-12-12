@@ -8,7 +8,7 @@ class ProductView extends Component {
     super(props);
     this.state = {
       id: "",
-      name: "",
+      title: "",
       price: "",
       content: "",
       status: false,
@@ -25,12 +25,12 @@ class ProductView extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps && nextProps.productGet) {
       var { productGet } = nextProps
       this.setState({
         id: productGet.id,
-        name: productGet.name,
+        title: productGet.title,
         price: productGet.price,
         content: productGet.content,
         status: productGet.status
@@ -39,10 +39,10 @@ class ProductView extends Component {
   }
 
   render() {
-    var { name, price, content } = this.state
+    var { title, price, content } = this.state
     return (
       <div>
-        <h1>{name}</h1>
+        <h1>{title}</h1>
         <p>Price: <b className="text-danger">{price + '$'}</b></p>
         <div>
           {ReactHtmlParser(content)}
